@@ -1,0 +1,74 @@
+header {
+    background-color: #ffb6c1;
+    padding: 20px;
+    text-align: center;
+    animation: fadeInDown 1s ease-out;
+  }
+  
+  .logo {
+    width: 120px;
+    transition: transform 0.3s ease;
+    align-items: left;
+  }
+  
+  .logo:hover {
+    transform: scale(1.1) rotate(-5deg);
+  }
+  
+  .titulo h1 {
+    color: #d6336c;
+    font-size: 2.5em;
+    letter-spacing: 2px;
+  }
+  
+  .titulo h2 {
+    color: #6c757d;
+  }
+  
+  .menu {
+    background-color: #fba0b6;
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  .menu ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .menu li {
+    margin: 0 20px;
+  }
+  
+  .menu a {
+    color: #fff;
+    font-weight: bold;
+    transition: transform 0.2s, color 0.3s;
+  }
+  
+  .menu a:hover {
+    color: #ffe0f0;
+    transform: scale(1.1);
+  }
+  
+  footer {
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    animation: slideUp 1.2s ease-out;
+  }
+  
+  @keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  
