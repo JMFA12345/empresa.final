@@ -111,7 +111,14 @@
                 const formData = new FormData(purchaseForm);
                 const data = Object.fromEntries(formData.entries());
                 console.log('Datos del formulario:', data);
-<form id="purchase-form" action="Https://formspree.io/f/mvgrwyoz" method="POST">
+<form id="purchase-form" action="https://api.web3forms.com/submit" method="POST">
+    <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+
+    <div class="form-group">
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" name="name" required placeholder="Tu nombre completo">
+        <span class="error-message" id="name-error"></span>
+    </div>
     <button type="submit">Finalizar Compra</button>
 </form>
 
