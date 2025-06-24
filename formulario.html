@@ -111,9 +111,9 @@
                 const formData = new FormData(purchaseForm);
                 const data = Object.fromEntries(formData.entries());
                 console.log('Datos del formulario:', data);
-
-                // Aquí es donde debes enviar los datos.
-                // Consulta la siguiente sección sobre cómo hacerlo.
+<form id="purchase-form" action="https://formspree.io/f/TU_ID_DE_FORMULARIO" method="POST">
+    <button type="submit">Finalizar Compra</button>
+</form>
 
                 purchaseForm.style.display = 'none';
                 formTitle.style.display = 'none';
