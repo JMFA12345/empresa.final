@@ -1,6 +1,6 @@
 body {
             font-family: 'Roboto', sans-serif;
-            background-color: #fce4ec; /* Rosado muy claro como fondo */
+            background-color: #fce4ec;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -9,7 +9,7 @@ body {
         }
 
         .form-container {
-            background-color: #fff; /* Blanco para el contenedor */
+            background-color: #fff;
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -17,11 +17,11 @@ body {
             max-width: 400px;
             box-sizing: border-box;
             text-align: center;
-            border: 1px solid #f8bbd0; /* Un borde rosado suave */
+            border: 1px solid #f8bbd0;
         }
 
         h2 {
-            color: #e91e63; /* Rosado más intenso para el título */
+            color: #e91e63;
             margin-bottom: 25px;
             font-size: 1.8em;
         }
@@ -34,39 +34,39 @@ body {
         label {
             display: block;
             margin-bottom: 6px;
-            color: #888; /* Grisáceo suave */
+            color: #888;
             font-weight: 500;
             font-size: 0.95em;
         }
 
         input:focus,
         select:focus {
-            border-color: #e91e63; /* Rosado al enfocar */
+            border-color: #e91e63;
             outline: none;
-            box-shadow: 0 0 0 2px rgba(233, 30, 99, 0.25); /* Sombra rosada al enfocar */
+            box-shadow: 0 0 0 2px rgba(233, 30, 99, 0.25);
         }
 
         input:focus::placeholder {
-            color: #f48fb1; /* Placeholder más claro al enfocar */
+            color: #f48fb1;
         }
 
         input::placeholder {
             color: #ccc;
         }
 
-        input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+        input::-webkit-input-placeholder {
             color: #ccc;
         }
 
-        input::-moz-placeholder { /* Firefox 19+ */
+        input::-moz-placeholder { 
             color: #ccc;
         }
 
-        input:-ms-input-placeholder { /* IE 10+ */
+        input:-ms-input-placeholder { 
             color: #ccc;
         }
 
-        input:-moz-placeholder { /* Firefox 18- */
+        input:-moz-placeholder {
             color: #ccc;
         }
 
@@ -74,7 +74,7 @@ body {
         select {
             width: calc(100% - 20px);
             padding: 10px;
-            border: 1px solid #f48fb1; /* Borde rosado claro para los campos */
+            border: 1px solid #f48fb1;
             border-radius: 5px;
             font-size: 0.9em;
             box-sizing: border-box;
@@ -82,7 +82,7 @@ body {
         }
 
         button {
-            background-color: #f06292; /* Botón rosado */
+            background-color: #f06292; 
             color: #fff;
             padding: 12px 25px;
             border: none;
@@ -92,11 +92,11 @@ body {
             cursor: pointer;
             transition: background-color 0.3s ease, transform 0.2s ease;
             margin-top: 15px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* Sombra sutil */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
         }
 
         button:hover {
-            background-color: #e91e63; /* Rosado más intenso al pasar el ratón */
+            background-color: #e91e63; 
             transform: translateY(-1px);
         }
 
@@ -105,15 +105,15 @@ body {
         }
 
         .error-message {
-            color: #d32f2f; /* Rojo para mensajes de error (contraste) */
+            color: #d32f2f;
             font-size: 0.8em;
             margin-top: 5px;
             display: none;
         }
 
         .success-message {
-            background-color: #fce4ec; /* Rosado claro para el mensaje de éxito */
-            color: #e91e63; /* Texto rosado para el mensaje de éxito */
+            background-color: #fce4ec; 
+            color: #e91e63; 
             border: 1px solid #f8bbd0;
             padding: 15px;
             border-radius: 5px;
