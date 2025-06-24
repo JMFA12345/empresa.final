@@ -1,0 +1,134 @@
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Guatemala Plushies Toys</title>
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/formulario.css"/>
+  </head>
+<body>
+    <center>
+<div class="titulo">
+      <h1>Guatemala Plushies Toys</h1>
+      <h2>Guatemalan Plushie’s Factory</h2>
+    </div>
+    </center>
+  <header>
+    <nav class="menu">
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="galeria.html">Galería</a></li>
+      <li><a href="proyecto.html">Proyectos</a></li>
+      <li><a href="contact.html">Contáctanos</a></li>
+      <li><a href="formulario.html">Compras y envios</a></li>
+    </ul>
+  </nav>
+  <center>
+  <div class="form-container">
+        <h2 id="form-title">Completa tu Compra</h2>
+        <form id="purchase-form">
+            <div class="form-group">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required placeholder="Tu nombre completo">
+                <span class="error-message" id="name-error"></span>
+            </div>
+            <div class="form-group">
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" required placeholder="tu@email.com">
+                <span class="error-message" id="email-error"></span>
+            </div>
+            <div class="form-group">
+                <label for="phone">Teléfono:</label>
+                <input type="tel" id="phone" name="phone" required placeholder="Tu número de teléfono">
+                <span class="error-message" id="phone-error"></span>
+            </div>
+            <div class="form-group">
+                <label for="payment-method">Método de Pago:</label>
+                <select id="payment-method" name="paymentMethod" required>
+                    <option value="">Selecciona...</option>
+                    <option value="card">Tarjeta de Crédito</option>
+                    <option value="paypal">PayPal</option>
+                </select>
+                <span class="error-message" id="payment-method-error"></span>
+            </div>
+            <button type="submit">Finalizar Compra</button>
+        </form>
+        <div id="success-message" class="success-message">
+            ¡Gracias! Tu compra se ha realizado con éxito.
+        </div>
+    </div>
+
+    <script>
+        const purchaseForm = document.getElementById('purchase-form');
+        const successMessage = document.getElementById('success-message');
+        const formTitle = document.getElementById('form-title');
+
+        function validateField(inputElement, errorMessageElement, validationFn) {
+            const isValid = validationFn(inputElement.value.trim());
+            if (!isValid) {
+                errorMessageElement.textContent = `Por favor, ingresa un valor válido.`;
+                errorMessageElement.style.display = 'block';
+                inputElement.classList.add('invalid');
+            } else {
+                errorMessageElement.textContent = '';
+                errorMessageElement.style.display = 'none';
+                inputElement.classList.remove('invalid');
+            }
+            return isValid;
+        }
+
+        const validations = {
+            name: (value) => value.length >= 2,
+            email: (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value),
+            phone: (value) => /^[0-9]{8,15}$/.test(value),
+            paymentMethod: (value) => value !== ""
+        };
+
+        function hideAllErrorMessages() {
+            document.querySelectorAll('.error-message').forEach(el => {
+                el.textContent = '';
+                el.style.display = 'none';
+            });
+            document.querySelectorAll('input, select').forEach(el => {
+                el.classList.remove('invalid');
+            });
+        }
+
+        purchaseForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            let formIsValid = true;
+            hideAllErrorMessages();
+
+            formIsValid = validateField(document.getElementById('name'), document.getElementById('name-error'), validations.name) && formIsValid;
+            formIsValid = validateField(document.getElementById('email'), document.getElementById('email-error'), validations.email) && formIsValid;
+            formIsValid = validateField(document.getElementById('phone'), document.getElementById('phone-error'), validations.phone) && formIsValid;
+            formIsValid = validateField(document.getElementById('payment-method'), document.getElementById('payment-method-error'), validations.paymentMethod) && formIsValid;
+
+            if (formIsValid) {
+                const formData = new FormData(purchaseForm);
+                const data = Object.fromEntries(formData.entries());
+                console.log('Datos del formulario:', data);
+
+                // Aquí es donde debes enviar los datos.
+                // Consulta la siguiente sección sobre cómo hacerlo.
+
+                purchaseForm.style.display = 'none';
+                formTitle.style.display = 'none';
+                successMessage.style.display = 'block';
+
+                setTimeout(() => {
+                    successMessage.style.display = 'none';
+                    purchaseForm.style.display = 'block';
+                    formTitle.style.display = 'block';
+                    purchaseForm.reset();
+                }, 4000);
+            } else {
+                console.log('Por favor, corrige los errores del formulario.');
+            }
+        });
+    </script>
+    </center>
+  </header>
+  <script src="js/main.js"></script>
+</body>
+</html>
